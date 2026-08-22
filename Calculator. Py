@@ -1,0 +1,153 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNJQcJXKAUC6pbhcr+CM6ya",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/shagunSrivastava9797-oss/CODSOFT_TASKSNO/blob/main/Calculator.%20Py\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EbKiIV1DFItu",
+        "outputId": "77046fc6-e785-4b16-ea7a-e0fe4e5aad24"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "===== SIMPLE CALCULATOR =====\n",
+            "\n",
+            "Select operation:\n",
+            "1. Add (+)\n",
+            "2. Subtract (-)\n",
+            "3. Multiply (*)\n",
+            "4. Divide (/)\n",
+            "5. Exit\n",
+            "Enter choice (1-5): 1\n",
+            "Enter first number: 1\n",
+            "Enter second number: 2\n",
+            "\n",
+            "Result: 1.0 + 2.0 = 3.0\n",
+            "\n",
+            "Select operation:\n",
+            "1. Add (+)\n",
+            "2. Subtract (-)\n",
+            "3. Multiply (*)\n",
+            "4. Divide (/)\n",
+            "5. Exit\n",
+            "Enter choice (1-5): 3\n",
+            "Enter first number: 4\n",
+            "Enter second number: 5\n",
+            "\n",
+            "Result: 4.0 * 5.0 = 20.0\n",
+            "\n",
+            "Select operation:\n",
+            "1. Add (+)\n",
+            "2. Subtract (-)\n",
+            "3. Multiply (*)\n",
+            "4. Divide (/)\n",
+            "5. Exit\n",
+            "Enter choice (1-5): 5\n",
+            "Goodbye!\n"
+          ]
+        }
+      ],
+      "source": [
+        "def add(a, b):\n",
+        "    return a + b\n",
+        "\n",
+        "\n",
+        "def subtract(a, b):\n",
+        "    return a - b\n",
+        "\n",
+        "\n",
+        "def multiply(a, b):\n",
+        "    return a * b\n",
+        "\n",
+        "\n",
+        "def divide(a, b):\n",
+        "    if b == 0:\n",
+        "        return \"Error! Division by zero.\"\n",
+        "    return a / b\n",
+        "\n",
+        "\n",
+        "def get_number(prompt):\n",
+        "    while True:\n",
+        "        try:\n",
+        "            return float(input(prompt))\n",
+        "        except ValueError:\n",
+        "            print(\"Invalid input. Please enter a number.\")\n",
+        "\n",
+        "\n",
+        "def main():\n",
+        "    print(\"===== SIMPLE CALCULATOR =====\")\n",
+        "\n",
+        "    while True:\n",
+        "        print(\"\\nSelect operation:\")\n",
+        "        print(\"1. Add (+)\")\n",
+        "        print(\"2. Subtract (-)\")\n",
+        "        print(\"3. Multiply (*)\")\n",
+        "        print(\"4. Divide (/)\")\n",
+        "        print(\"5. Exit\")\n",
+        "\n",
+        "        choice = input(\"Enter choice (1-5): \").strip()\n",
+        "\n",
+        "        if choice == \"5\":\n",
+        "            print(\"Goodbye!\")\n",
+        "            break\n",
+        "\n",
+        "        if choice not in (\"1\", \"2\", \"3\", \"4\"):\n",
+        "            print(\"Invalid choice. Please select 1-5.\")\n",
+        "            continue\n",
+        "\n",
+        "        num1 = get_number(\"Enter first number: \")\n",
+        "        num2 = get_number(\"Enter second number: \")\n",
+        "\n",
+        "        if choice == \"1\":\n",
+        "            result = add(num1, num2)\n",
+        "            symbol = \"+\"\n",
+        "        elif choice == \"2\":\n",
+        "            result = subtract(num1, num2)\n",
+        "            symbol = \"-\"\n",
+        "        elif choice == \"3\":\n",
+        "            result = multiply(num1, num2)\n",
+        "            symbol = \"*\"\n",
+        "        elif choice == \"4\":\n",
+        "            result = divide(num1, num2)\n",
+        "            symbol = \"/\"\n",
+        "\n",
+        "        print(f\"\\nResult: {num1} {symbol} {num2} = {result}\")\n",
+        "\n",
+        "\n",
+        "if __name__ == \"__main__\":\n",
+        "    main()"
+      ]
+    }
+  ]
+}
